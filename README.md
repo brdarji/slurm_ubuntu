@@ -1,1 +1,1 @@
-# slurm_ubuntu
+# Slurm setup for Ubuntu
