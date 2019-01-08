@@ -8,5 +8,5 @@ This guide provides the steps to install a slurm controller node and compute nod
 3. Passwordless SSH is working between compute node and control node (if both are separate computer)
 4. Create shared storage between all the nodes.
 
-# Updating...
+Updating...
 
