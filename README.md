@@ -19,7 +19,7 @@ The following steps make the follwing assumptions.
 # Install prerequisites
 
 Ubuntu 16.04 / 18.04
-``` bash
+```
 # apt-get update
 # apt-get install git gcc make libpam0g-dev libmariadb-client-lgpl-dev libmysqlclient-dev checkinstall
 ```
