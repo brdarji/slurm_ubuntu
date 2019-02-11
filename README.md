@@ -20,13 +20,13 @@ The following steps make the follwing assumptions.
 
 Ubuntu 16.04 / 18.04
 ``` bash
-  # apt-get update
-  # apt-get install git gcc make libpam0g-dev libmariadb-client-lgpl-dev libmysqlclient-dev checkinstall
+# apt-get update
+# apt-get install git gcc make libpam0g-dev libmariadb-client-lgpl-dev libmysqlclient-dev checkinstall
 ```
 Copy git repo
 ```
 $ cd /storage
-$ git clone https://github.com/mknoxnv/ubuntu-slurm.git
+$ git clone https://github.com/brdarji/slurm_ubuntu.git
 ```
 
 Customize slurm.conf with your slurm controller and compute node hostnames:
