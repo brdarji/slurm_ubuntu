@@ -196,7 +196,7 @@ Run a GPU job from slurm-ctrl
 # srun -N 1 --gres=gpu:1 env | grep CUDA
 CUDA_VISIBLE_DEVICES=0
 ```
-Enable Slurm PAM SSH Control
+# Enable Slurm PAM SSH Control
 
 This prevents users from ssh-ing into a compute node on which they do not have an allocation.
 
