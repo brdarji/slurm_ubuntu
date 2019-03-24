@@ -93,18 +93,18 @@ Ubuntu 16.04 / 18.04
 Copy into place config files from this repo which you've already cloned into /storage
 ```
 # cd /storage
-# cp ubuntu-slurm/slurmdbd.service /etc/systemd/system/
-# cp ubuntu-slurm/slurmctld.service /etc/systemd/system/
+# cp slurm_ubuntu/slurmdbd.service /etc/systemd/system/
+# cp slurm_ubuntu/slurmctld.service /etc/systemd/system/
 ```
 Edit /storage/ubuntu-slurm/slurm.conf and replace AccountingStoragePass=slurmdbpass with the DB password 
 you used in the above SQL section.
 ```
-# cp ubuntu-slurm/slurm.conf /etc/slurm/
+# cp slurm_ubuntu/slurm.conf /etc/slurm/
 ```
 Edit /storage/ubuntu-slurm/slurmdbd.conf and replace StoragePass=slrumdbpass with the DB password you used
 in the above SQL section.
 ```
-# cp ubuntu-slurm/slurmdbd.conf /etc/slurm/
+# cp slurm_ubuntu/slurmdbd.conf /etc/slurm/
 ```
 Ubuntu 16.04 / 18.04
 ```
@@ -152,21 +152,21 @@ STATUS:           Success (0)
 ```
 $ dpkg -i /storage/slurm-<version>_amd64.deb
 $ mkdir /etc/slurm
-$ cp /storage/ubuntu-slurm/slurm.conf /etc/slurm/slurm.conf
+$ cp /storage/slurm_ubuntu/slurm.conf /etc/slurm/slurm.conf
 ```
 If necessary modify gres.conf to reflect the properties of this compute node.
 gres.conf.dgx is an example configuration for the DGX-1. 
 Use "nvidia-smi topo -m" to find the GPU-CPU affinity.
 ```
-# cp /storage/ubuntu-slurm/gres.conf /etc/slurm/gres.conf
-# cp /storage/ubuntu-slurm/cgroup.conf /etc/slurm/cgroup.conf
-# cp /storage/ubuntu-slurm/cgroup_allowed_devices_file.conf /etc/slurm/cgroup_allowed_devices_file.conf
+# cp /storage/slurm_ubuntu/gres.conf /etc/slurm/gres.conf
+# cp /storage/slurm_ubuntu/cgroup.conf /etc/slurm/cgroup.conf
+# cp /storage/slurm_ubuntu/cgroup_allowed_devices_file.conf /etc/slurm/cgroup_allowed_devices_file.conf
 # useradd slurm
 # mkdir -p /var/spool/slurm/d
 ```
 Ubuntu 16.04
 ```
-# cp /storage/ubuntu-slurm/slurmd.service /etc/systemd/system/
+# cp /storage/slurm_ubuntu/slurmd.service /etc/systemd/system/
 # systemctl enable slurmd
 # systemctl start slurmd
 ```
@@ -194,7 +194,6 @@ linux1
 Run a GPU job from slurm-ctrl
 ```
 # srun -N 1 --gres=gpu:1 env | grep CUDA
-CUDA_VISIBLE_DEVICES=0
 ```
 # Enable Slurm PAM SSH Control
 
@@ -202,7 +201,7 @@ This prevents users from ssh-ing into a compute node on which they do not have a
 
 On the compute nodes:
 ```
-# cp /storage/slurm-17.02.6/contribs/pam/.libs/pam_slurm.so /lib/x86_64-linux-gnu/security/
+# cp /storage/slurm-17.11.12/contribs/pam/.libs/pam_slurm.so /lib/x86_64-linux-gnu/security/
 # vi /etc/pam.d/sshd
 account    required     /lib/x86_64-linux-gnu/security/pam_slurm.so
 ```
