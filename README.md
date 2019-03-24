@@ -31,7 +31,7 @@ $ git clone https://github.com/brdarji/slurm_ubuntu.git
 
 Customize slurm.conf with your slurm controller and compute node hostnames:
 ```
-# vi ubuntu-slurm/slurm.conf
+# vi slurm_ubuntu/slurm.conf
 ControlMachine=slurm-ctrl
 NodeName=linux1 (you can specify a range of nodes here, for example: linux[1-10])
 ```
